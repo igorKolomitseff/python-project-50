@@ -1,23 +1,13 @@
 #!/usr/bin/env python3
-import argparse
+from gendiff.parse import get_argparse
+from gendiff.diff_generator import generate_diff
+
 
 def main():
-    # creating an ArgumentParser object for parsing the command line into 
-    # Python data types
-    parser = argparse.ArgumentParser(
-        description='Compares two configuration files and shows a difference.'
-    )
-    
-    # adding positional arguments
-    parser.add_argument('first_file')
-    parser.add_argument('second_file')
-    
-    # adding optional argument
-    parser.add_argument('-f', '--format', help='set format of output')
+    first_file, second_file = get_argparse()
 
-    # parsing arguments
-    args = parser.parse_args()
-
+    diff = generate_diff(first_file, second_file)
+    print(diff)
 
 
 if __name__ == '__main__':
