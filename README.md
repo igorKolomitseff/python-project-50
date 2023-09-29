@@ -1,2 +1,3 @@
 [![Actions Status](https://github.com/igorKolomitseff/python-project-50/workflows/hexlet-check/badge.svg)](https://github.com/igorKolomitseff/python-project-50/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/4ab311c6447fdf43f42b/maintainability)](https://codeclimate.com/github/igorKolomitseff/python-project-50/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/4ab311c6447fdf43f42b/test_coverage)](https://codeclimate.com/github/igorKolomitseff/python-project-50/test_coverage)
