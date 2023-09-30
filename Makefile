@@ -33,3 +33,6 @@ test-coverage:
 
 selfcheck:
 		poetry check
+
+check:
+		selfcheck test lint
