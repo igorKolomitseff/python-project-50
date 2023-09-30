@@ -10,7 +10,7 @@ minor:
 major:
 		poetry version major
 
-build:
+build: check
 		poetry build
 
 publish:
