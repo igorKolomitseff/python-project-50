@@ -19,8 +19,8 @@ def get_file_format(file_path: str) -> str:
 
 
 def get_file_content(file_path: str) -> dict:
-    """Returns the contents of the file with the extension .json or .yaml (.yml).
-            as a dictionary.
+    """Returns the contents of the file with the extension .json or
+            .yaml (.yml) as a dictionary.
 
     Args:
         file_path: Path to the file.
@@ -75,7 +75,7 @@ def generate_diff(first_file_path: str,  second_file_path: str) -> str:
 
     first_file_dict = get_file_content(first_file_path)
     second_file_dict = get_file_content(second_file_path)
-    
+
     keys = set(first_file_dict.keys()) | set(second_file_dict.keys())
 
     result = []
