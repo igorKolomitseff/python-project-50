@@ -22,7 +22,10 @@ def get_argparse() -> tuple:
                         type=str)
 
     # adding optional argument
-    parser.add_argument('-f', '--format', help='set format of output')
+    parser.add_argument('-f',
+                        '--format',
+                        default='stylish',
+                        help='set format of output')
 
     # parsing arguments
     args = parser.parse_args()
