@@ -1,7 +1,7 @@
 from gendiff.file_parser import get_file_content
 from gendiff.diff import make_diff
 from gendiff.formatters.formatter_stylish import format_diff_stylish
-from gendiff.formatter_plain import format_diff_plain
+from gendiff.formatters.formatter_plain import format_diff_plain
 
 
 def get_formatter(formatter: str):
