@@ -4,9 +4,12 @@ from gendiff.diff_generator import generate_diff
 
 
 def main():
-    first_file, second_file = get_argparse()
+    args = get_argparse()
+    first_file = args.first_file
+    second_file = args.second_file
+    formatter = args.format
 
-    diff = generate_diff(first_file, second_file)
+    diff = generate_diff(first_file, second_file, formatter)
     print(diff)
 
 
