@@ -24,7 +24,7 @@ def get_correct_str(value: str) -> str:
         value: A data string.
 
     Returns:
-        str: A data string in the correct form.
+        A data string in the correct form.
     """
 
     python_to_json_literals = {
@@ -77,7 +77,7 @@ def convert_dict_to_str(value: Any | dict, depth: int) -> str:
     return iter_(value, depth)
 
 
-def format_diff(diff: dict) -> str:
+def format_diff_stylish(diff: dict) -> str:
     """Returns a stylized representation of changes in
         the contents of the second file relative to the first.
 
