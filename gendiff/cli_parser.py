@@ -30,4 +30,4 @@ def get_argparse() -> tuple:
     # parsing arguments
     args = parser.parse_args()
 
-    return args.first_file, args.second_file
+    return args
