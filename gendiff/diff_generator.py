@@ -1,6 +1,15 @@
 from gendiff.file_parser import get_file_content
 from gendiff.diff import make_diff
-from gendiff.formatter_stylish import format_diff
+from gendiff.formatter_stylish import format_diff_stylish
+from gendiff.formatter_plain import format_diff_plain
+
+
+def get_formatter(formatter: str):
+    match formatter:
+        case 'stylish':
+            return format_diff_stylish
+        case 'plain':
+            return format_diff_plain
 
 
 def generate_diff(first_file_path: str,
@@ -20,6 +29,7 @@ def generate_diff(first_file_path: str,
 
     first_file_dict = get_file_content(first_file_path)
     second_file_dict = get_file_content(second_file_path)
+    format_diff = get_formatter(formatter)
 
     diff_dict = make_diff(first_file_dict, second_file_dict)
 
