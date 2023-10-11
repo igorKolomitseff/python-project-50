@@ -2,6 +2,7 @@ from gendiff.file_parser import get_file_content
 from gendiff.diff import make_diff
 from gendiff.formatters.formatter_stylish import format_diff_stylish
 from gendiff.formatters.formatter_plain import format_diff_plain
+from gendiff.formatters.formatter_json import format_diff_json
 
 
 def get_formatter(formatter: str):
@@ -10,6 +11,8 @@ def get_formatter(formatter: str):
             return format_diff_stylish
         case 'plain':
             return format_diff_plain
+        case 'json':
+            return format_diff_json
 
 
 def generate_diff(first_file_path: str,
