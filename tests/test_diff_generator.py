@@ -16,6 +16,7 @@ yaml_file_format = '.yml'
 result_flat_file_name = 'result_flat'
 result_stylish_file_name = 'result_stylish'
 result_plain_file_name = 'result_plain'
+result_json_file_name = 'result_json'
 
 result_file_format = '.txt'
 
@@ -35,6 +36,7 @@ second_nested_yaml_file_path = os.path.join(test_directory_path, file2_nested_na
 
 format_diff_stylish = 'stylish'
 format_diff_plain = 'plain'
+format_diff_json = 'json'
 
 
 @pytest.fixture
@@ -70,6 +72,17 @@ def result_plain():
         return result_string
 
 
+@pytest.fixture
+def result_json():
+    result_file_path = os.path.join(test_directory_path, result_json_file_name + result_file_format)
+
+    with open(result_file_path) as result_json:
+        result_list = result_json.readlines()
+        result_string = ''.join(result_list)
+
+        return result_string
+
+
 def test_generate_diff_flat_files(result_flat):
     result = result_flat
     assert generate_diff(first_flat_json_file_path, second_flat_json_file_path) == result 
@@ -92,3 +105,11 @@ def test_generate_diff_nested_files_plain(result_plain):
     assert generate_diff(first_nested_json_file_path, second_nested_json_file_path, format_diff_plain) == result 
     assert generate_diff(first_nested_json_file_path, second_nested_json_file_path, format_diff_plain) == result 
     assert generate_diff(first_nested_json_file_path, second_nested_json_file_path, format_diff_plain) == result
+
+
+def test_generate_diff_nested_files_json(result_json):
+    result = result_json
+    assert generate_diff(first_nested_json_file_path, second_nested_json_file_path, format_diff_json) == result 
+    assert generate_diff(first_nested_json_file_path, second_nested_json_file_path, format_diff_json) == result 
+    assert generate_diff(first_nested_json_file_path, second_nested_json_file_path, format_diff_json) == result 
+    assert generate_diff(first_nested_json_file_path, second_nested_json_file_path, format_diff_json) == result
