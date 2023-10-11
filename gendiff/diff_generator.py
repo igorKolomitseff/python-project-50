@@ -32,6 +32,7 @@ def generate_diff(first_file_path: str,
 
     first_file_dict = get_file_content(first_file_path)
     second_file_dict = get_file_content(second_file_path)
+
     format_diff = get_formatter(formatter)
 
     diff_dict = make_diff(first_file_dict, second_file_dict)
