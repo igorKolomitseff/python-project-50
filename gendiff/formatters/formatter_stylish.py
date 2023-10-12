@@ -11,7 +11,7 @@ STATUS_DICT = {
     'changed': {
         'old': '- ',
         'new': '+ '
-        },
+    },
     'unchanged': '  '
 }
 
@@ -103,7 +103,7 @@ def format_diff_stylish(diff: dict) -> str:
                                    + STATUS_DICT[status])
 
                     value = current_value[key]['value']
-                    result_value = convert_dict_to_str(value, depth+1)
+                    result_value = convert_dict_to_str(value, depth + 1)
 
                     string = f'{deep_indent}{key}: {result_value}\n'
 
@@ -116,7 +116,7 @@ def format_diff_stylish(diff: dict) -> str:
 
                     value = current_value[key]['value']
 
-                    string = f'{deep_indent}{key}: {walk(value, depth+1)}\n'
+                    string = f'{deep_indent}{key}: {walk(value, depth + 1)}\n'
                     lines.append(string)
 
                 case 'changed':
@@ -125,14 +125,14 @@ def format_diff_stylish(diff: dict) -> str:
                                        + STATUS_DICT[status]['old'])
 
                     old_value = current_value[key]['old_value']
-                    old_result_value = convert_dict_to_str(old_value, depth+1)
+                    old_result_value = convert_dict_to_str(old_value, depth + 1)
 
                     new_deep_indent = (REPLACER
                                        * deep_indent_size
                                        + STATUS_DICT[status]['new'])
 
                     new_value = current_value[key]['new_value']
-                    new_result_value = convert_dict_to_str(new_value, depth+1)
+                    new_result_value = convert_dict_to_str(new_value, depth + 1)
 
                     first_string = (f'{old_deep_indent}{key}: '
                                     f'{old_result_value}\n')
