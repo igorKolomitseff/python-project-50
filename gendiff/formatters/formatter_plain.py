@@ -90,7 +90,7 @@ def format_diff_plain(diff: dict) -> str:
                 case 'nested':
                     value = current_value[key]['value']
 
-                    walk(value, path+f'{key}.')
+                    walk(value, path + f'{key}.')
 
         result_string = ''.join(lines).strip('\n')
 
