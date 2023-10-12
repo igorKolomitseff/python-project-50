@@ -21,6 +21,8 @@ def get_correct_str(value: Any) -> str:
 
     if str(value) in python_to_json_literals:
         return python_to_json_literals[str(value)]
+    elif isinstance(value, int) or isinstance(value, float):
+        return str(value)
     else:
         return f'\'{str(value)}\''
 
