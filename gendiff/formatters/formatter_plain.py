@@ -92,7 +92,7 @@ def format_diff_plain(diff: dict) -> str:
 
                     walk(value, path+f'{key}.')
 
-        result_string = ''.join(lines)
+        result_string = ''.join(lines).strip('\n')
 
         return result_string
 
