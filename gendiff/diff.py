@@ -52,7 +52,7 @@ def make_diff(first_file_dict: dict, second_file_dict: dict) -> dict:
             result_dict[key] = {
                 'status': 'nested',
                 'children': make_diff(first_value,
-                                   second_value)
+                                      second_value)
             }
 
         elif first_value != second_value:
