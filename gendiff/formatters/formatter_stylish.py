@@ -114,7 +114,7 @@ def format_diff_stylish(diff: dict) -> str:
                                    * deep_indent_size
                                    + STATUS_DICT[status])
 
-                    value = current_value[key]['value']
+                    value = current_value[key]['children']
 
                     string = f'{deep_indent}{key}: {walk(value, depth + 1)}\n'
                     lines.append(string)

@@ -88,7 +88,7 @@ def format_diff_plain(diff: dict) -> str:
                     continue
 
                 case 'nested':
-                    value = current_value[key]['value']
+                    value = current_value[key]['children']
 
                     walk(value, path + f'{key}.')
 
