@@ -21,29 +21,29 @@ The program is installed using [pip](https://pip.pypa.io/en/stable/) by the foll
 python3 -m pip install --user git+https://github.com/igorKolomitseff/python-project-50.git
 ```
 
-[comment]: <> (AScIINEMA!!!)
+[![asciicast](https://asciinema.org/a/614110.svg)](https://asciinema.org/a/614110)
 
 The operability of the program can be checked using the command:
 `gendiff -h`
 
-[comment]: <> (AScIINEMA!!!)
+[![asciicast](https://asciinema.org/a/614111.svg)](https://asciinema.org/a/614111)
 
 Comparison of flat JSON files:
 
-[comment]: <> (AScIINEMA!!!)
+[![asciicast](https://asciinema.org/a/614123.svg)](https://asciinema.org/a/614123)
 
 Comparison of flat YAML files:
 
-[comment]: <> (AScIINEMA!!!)
+[![asciicast](https://asciinema.org/a/614125.svg)](https://asciinema.org/a/614125)
 
 Comparison of nested json files in the stylish format:
 
-[comment]: <> (AScIINEMA!!!)
+[![asciicast](https://asciinema.org/a/614127.svg)](https://asciinema.org/a/614127)
 
 Comparison of nested json files in the plain format:
 
-[comment]: <> (AScIINEMA!!!)
+[![asciicast](https://asciinema.org/a/614130.svg)](https://asciinema.org/a/614130)
 
 Comparison of nested json files in the json format:
 
-[comment]: <> (AScIINEMA!!!)
+[![asciicast](https://asciinema.org/a/614131.svg)](https://asciinema.org/a/614131)
