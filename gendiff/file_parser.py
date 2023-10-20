@@ -1,5 +1,9 @@
 import json
 import yaml
+import sys
+
+
+sys.tracebacklimit = 0
 
 
 def get_file_format(file_path: str) -> str:
@@ -12,10 +16,9 @@ def get_file_format(file_path: str) -> str:
         str: A string with the file format.
     """
 
-    if file_path.endswith('.json'):
-        return 'json'
-    elif file_path.endswith('.yaml') or file_path.endswith('yml'):
-        return 'yaml'
+    file_format = file_path.split('.')[-1]
+
+    return file_format
 
 
 def get_file_content(file_path: str) -> dict:
@@ -31,10 +34,20 @@ def get_file_content(file_path: str) -> dict:
 
     file_format = get_file_format(file_path)
 
-    if file_format == 'json':
-        with open(file_path, 'r') as json_file:
-            return json.load(json_file)
+    match file_format:
+        case 'json':
+            try:
+                with open(file_path, 'r') as json_file:
+                    return json.load(json_file)
+            except FileNotFoundError:
+                raise
 
-    elif file_format == 'yaml':
-        with open(file_path, 'r') as yaml_file:
-            return yaml.safe_load(yaml_file)
+        case 'yaml' | 'yml':
+            try:
+                with open(file_path, 'r') as yaml_file:
+                    return yaml.safe_load(yaml_file)
+            except FileNotFoundError:
+                raise
+
+        case _:
+            raise ValueError(f'Unsupported file format: {file_format}')
