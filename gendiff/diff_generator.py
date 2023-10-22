@@ -27,7 +27,7 @@ def generate_diff(first_file_path: str,
             Defaults to 'stylish'.
 
     Returns:
-        str:A string containing the difference between files.
+        A string containing the difference between files.
     """
 
     first_file_dict = get_file_content(first_file_path)
