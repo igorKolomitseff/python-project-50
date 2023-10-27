@@ -16,7 +16,7 @@ STATUS_DICT = {
 }
 
 
-def get_correct_str(value: str) -> str:
+def get_correct_str(value: Any) -> str:
     """Returns the value as a string in the correct form,
             typical for json files.
 
@@ -39,7 +39,7 @@ def get_correct_str(value: str) -> str:
         return str(value)
 
 
-def convert_dict_to_str(value: Any | dict, depth: int) -> str:
+def convert_dict_to_str(value: Any | dict[str, Any], depth: int) -> str:
     """Returns the passed value as a string.
             Special attention is paid to converting
             a nested dictionary into a string.
@@ -49,7 +49,7 @@ def convert_dict_to_str(value: Any | dict, depth: int) -> str:
         depth: Dictionary nesting depth.
 
     Returns:
-        str: A data string.
+        A data string.
     """
 
     def iter_(current_value, depth):
@@ -77,7 +77,7 @@ def convert_dict_to_str(value: Any | dict, depth: int) -> str:
     return iter_(value, depth)
 
 
-def format_diff_stylish(diff: dict) -> str:
+def format_diff_stylish(diff: dict[str, Any]) -> str:
     """Returns a stylized representation of changes in
         the contents of the second file relative to the first.
 

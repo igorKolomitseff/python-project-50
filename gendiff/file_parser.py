@@ -1,6 +1,7 @@
 import json
 import yaml
 import sys
+from typing import Any
 
 
 sys.tracebacklimit = 0
@@ -13,7 +14,7 @@ def get_file_format(file_path: str) -> str:
         file_path: Path to the file.
 
     Returns:
-        str: A string with the file format.
+        A string with the file format.
     """
 
     file_format = file_path.split('.')[-1]
@@ -21,7 +22,7 @@ def get_file_format(file_path: str) -> str:
     return file_format
 
 
-def get_file_content(file_path: str) -> dict:
+def get_file_content(file_path: str) -> dict[str, Any]:
     """Returns the contents of the file with the extension .json or
             .yaml (.yml) as a dictionary.
 

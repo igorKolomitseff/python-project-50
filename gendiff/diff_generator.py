@@ -3,9 +3,19 @@ from gendiff.diff import make_diff
 from gendiff.formatters.formatter_stylish import format_diff_stylish
 from gendiff.formatters.formatter_plain import format_diff_plain
 from gendiff.formatters.formatter_json import format_diff_json
+from typing import Callable, Any
 
 
-def get_formatter(formatter: str):
+def get_formatter(formatter: str) -> Callable[[dict[str, Any]], str]:
+    """Returns the formatter function.
+
+    Args:
+        formatter: Name of the formatter.
+
+    Returns:
+        The formatter function.
+    """
+
     match formatter:
         case 'stylish':
             return format_diff_stylish
@@ -17,7 +27,7 @@ def get_formatter(formatter: str):
 
 def generate_diff(first_file_path: str,
                   second_file_path: str,
-                  formatter='stylish') -> str:
+                  formatter: str = 'stylish') -> str:
     """Returns a change in the content in the second file relative to the first.
 
     Args:

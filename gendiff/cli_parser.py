@@ -1,7 +1,7 @@
 import argparse
 
 
-def get_argparse() -> tuple:
+def get_argparse():
     """Allows the program to get the necessary arguments and track
             the correctness of their use.
 

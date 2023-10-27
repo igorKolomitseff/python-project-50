@@ -1,7 +1,8 @@
 import json
+from typing import Any
 
 
-def format_diff_json(diff: dict) -> str:
+def format_diff_json(diff: dict[str, Any]) -> str:
     """Returns a json representation of changes in
         the contents of the second file relative to the first.
 

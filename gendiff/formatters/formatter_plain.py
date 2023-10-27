@@ -25,7 +25,7 @@ def get_correct_str(value: Any) -> str:
         return repr(value)
 
 
-def get_correct_value(value: Any | dict) -> Union[str, Callable[[Any], str]]:
+def get_correct_value(value: Any | dict[str, Any]) -> Union[str, Callable[[Any], str]]:  # noqa: E501
     """Returns the value as a string in the correct form.
 
     Args:
@@ -40,7 +40,7 @@ def get_correct_value(value: Any | dict) -> Union[str, Callable[[Any], str]]:
         return get_correct_str(value)
 
 
-def format_diff_plain(diff: dict) -> str:
+def format_diff_plain(diff: dict[str, Any]) -> str:
     """Returns a plain stylized representation of changes in
         the contents of the second file relative to the first.
 
